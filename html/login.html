@@ -48,8 +48,8 @@
                 <input
                   type="password"
                   placeholder="Password"
-                  id="email"
-                  name="email"
+                  id="password"
+                  name="password"
                 />
                 <span class="form-message"></span>
               </div>
@@ -87,24 +87,12 @@
         errorSelector: '.form-message',
         rules: [
           Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy dủ của bạn'),
-          Validator.isRequired('#email', 'Vui lòng nhập trường này'),
+
           Validator.isRequired('#password', 'Vui lòng nhập trường này'),
-          Validator.isRequired(
-            '#password_confirmation',
-            'Vui lòng nhập trường này'
-          ),
-          Validator.isEmail('#email'),
-          Validator.isPassword('#password', 8),
-          Validator.isConfirmPassword(
-            '#password_confirmation',
-            () => {
-              return document.querySelector('#form-1 #password').value
-            },
-            'mật khẩu nhập lại không chính xác'
-          ),
+          Validator.isPassword('#password', 2),
         ],
         onSubmit: (data) => {
-          console.log(data)
+          localStorage.setItem(data)
         },
       })
     </script>

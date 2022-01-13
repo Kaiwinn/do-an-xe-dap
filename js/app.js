@@ -17,6 +17,8 @@ let slide_next = banner_slide.querySelector('.slide-next')
 
 let slide_prev = banner_slide.querySelector('.slide-prev')
 
+const toTop = document.querySelector('.to-header')
+
 let header = $('header')
 let btn = $('button')
 btn.onclick = () => {
@@ -62,13 +64,11 @@ banner_slide.addEventListener('mouseover', () => (banner_slide_play = false))
 // resume slide when mouse leave out slider
 banner_slide.addEventListener('mouseleave', () => (banner_slide_play = true))
 
-setTimeout(() => banner_slide_items[0].classList.add('active'), 200)
-
 // auto slide
-// setInterval(() => {
-//     if (!banner_slide_play) return
-//     nextSlide()
-// }, 5000);
+setInterval(() => {
+  if (!banner_slide_play) return
+  nextSlide()
+}, 5000)
 
 // change header style when scroll
 window.addEventListener('scroll', () => {
@@ -76,6 +76,15 @@ window.addEventListener('scroll', () => {
     header.classList.add('shrink')
   } else {
     header.classList.remove('shrink')
+  }
+})
+
+//scroll to top
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 1000) {
+    toTop.classList.add('active')
+  } else {
+    toTop.classList.remove('active')
   }
 })
 
@@ -110,3 +119,5 @@ loop = () => {
 }
 
 loop()
+document.querySelector('.cart-quantity').innerText =
+  localStorage.getItem('quantity')

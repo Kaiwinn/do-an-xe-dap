@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./../boxicons-2.1.1/css/boxicons.min.css" />
+    <link rel="stylesheet/less" href="../css/cart.less" />
+  </head>
+  <body>
+    <header id="header">
+      <a href="#" class="logo">
+        <img src="./../images/TuaBike.png" alt="" />
+      </a>
+      <div class="navbar-menu-wrapper">
+        <ul class="navbar-menu">
+          <li><a href="index.html" class="active">home</a></li>
+          <li><a href="#">shop</a></li>
+          <li><a href="#">dealer</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </div>
+      <div class="user-menu">
+        <a href="cart.html" class="pe-2"
+          ><i class="bx bx-shopping-bag"></i>
+          <span class="cart-quantity">3</span>
+        </a>
+        <a href="./../html/login.html"><i class="bx bx-user"></i></a>
+        <a href="#"><i class="bx bx-search"></i></a>
+      </div>
+    </header>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12 p-5 mb-5">
+          <div class="table-responsive">
+            <table class="table text-white">
+              <thead>
+                <tr>
+                  <th>
+                    <span class="p-2 px-3 text-uppercase">Product</span>
+                  </th>
+                  <th>
+                    <span class="py-2 text-uppercase">Price</span>
+                  </th>
+                  <th>
+                    <span class="py-2 text-uppercase">Quantity</span>
+                  </th>
+                  <th>
+                    <span class="py-2 text-uppercase">Remove</span>
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="cartItems">
+                <tr>
+                  <th>
+                    <div class="p-2 align-middle">
+                      <img
+                        src="https://bootstrapious.com/i/snippets/sn-cart/product-1.jpg"
+                        alt=""
+                        width="70"
+                        class="img-fluid rounded shop-item-image"
+                      />
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0">
+                          <a href="#" class="d-inline-block align-middle"
+                            >Timex Unisex Originals</a
+                          >
+                        </h5>
+                        <span class="fw-normal fst-italic d-block"
+                          >Category: Watches</span
+                        >
+                      </div>
+                    </div>
+                  </th>
+                  <td class="align-middle cart-price">$79</td>
+                  <td class="align-middle cart-quantity ps-5">3</td>
+                  <td class="align-middle">
+                    <button class="remove">
+                      <i class="ps-4 fs-4 bx bxs-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    <div class="p-2 align-middle">
+                      <img
+                        src="https://bootstrapious.com/i/snippets/sn-cart/product-1.jpg"
+                        alt=""
+                        width="70"
+                        class="img-fluid rounded shop-item-image"
+                      />
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0">
+                          <a href="#" class="d-inline-block align-middle"
+                            >Timex Unisex Originals</a
+                          >
+                        </h5>
+                        <span class="fw-normal fst-italic d-block"
+                          >Category: Watches</span
+                        >
+                      </div>
+                    </div>
+                  </th>
+                  <td class="align-middle cart-price">$79</td>
+                  <td class="align-middle cart-quantity ps-5">3</td>
+                  <td class="align-middle">
+                    <button class="remove">
+                      <i class="ps-4 fs-4 bx bxs-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+                <tr>
+                  <th>
+                    <div class="p-2 align-middle">
+                      <img
+                        src="https://bootstrapious.com/i/snippets/sn-cart/product-1.jpg"
+                        alt=""
+                        width="70"
+                        class="img-fluid rounded shop-item-image"
+                      />
+                      <div class="ml-3 d-inline-block align-middle">
+                        <h5 class="mb-0">
+                          <a href="#" class="d-inline-block align-middle"
+                            >Timex Unisex Originals</a
+                          >
+                        </h5>
+                        <span class="fw-normal fst-italic d-block"
+                          >Category: Watches</span
+                        >
+                      </div>
+                    </div>
+                  </th>
+                  <td class="align-middle cart-price">$79</td>
+                  <td class="align-middle cart-quantity ps-5">3</td>
+                  <td class="align-middle">
+                    <button class="remove">
+                      <i class="ps-4 fs-4 bx bxs-trash-alt"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="row justify-content-end">
+        <div class="col-lg-6">
+          <div class="rounded-pill px-4 py-3 text-uppercase font-weight-bold">
+            Order summary
+          </div>
+          <div class="list-unstyled mb-4 p-5">
+            <ul class="list-unstyled mb-4">
+              <li class="d-flex justify-content-between py-3 border-bottom">
+                <strong class="text-muted">Order Subtotal </strong
+                ><strong class="cart-total-price">$390.00</strong>
+              </li>
+              <li class="d-flex justify-content-between py-3 border-bottom">
+                <strong class="text-muted">Shipping and handling</strong
+                ><strong class="ship">$10</strong>
+              </li>
+              <li class="d-flex justify-content-between py-3 border-bottom">
+                <strong class="text-muted">Total</strong>
+                <h5 class="font-weight-bold total-price">$400</h5>
+              </li>
+            </ul>
+            <a
+              href="#"
+              class="btn btn-dark rounded-pill py-2 btn-block float-end btn-purchase"
+              >Procceed to checkout</a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="empty" class="empty">
+      <img src="../images/cart_empty.png" alt="cart empty" />
+      <p class="empty-note">Không có sản phẩm nào trong giỏ hàng của bạn</p>
+      <a href="index.html" class="empty-btn">Tiếp tục mua sắm</a>
+    </div>
+    <script src="../js/cart.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/less@3.13"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

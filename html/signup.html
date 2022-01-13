@@ -89,23 +89,24 @@
           Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy dủ của bạn'),
           Validator.isRequired('#email', 'Vui lòng nhập trường này'),
           Validator.isRequired('#password', 'Vui lòng nhập trường này'),
-          Validator.isRequired('input[name = "gender"]'),
           Validator.isRequired(
             '#password_confirmation',
-            'Vui lòng nhập trường này'
+            'Vui lòng nhập mật khẩu ở trên'
           ),
-          Validator.isEmail('#email'),
+          Validator.isEmail('#email', 'trường này không phải là email'),
           Validator.isPassword('#password', 8),
           Validator.isConfirmPassword(
             '#password_confirmation',
-            () => {
-              return document.querySelector('#form-1 #password').value
-            },
+            () => document.querySelector('#form #password').value,
             'mật khẩu nhập lại không chính xác'
           ),
         ],
         onSubmit: (data) => {
-          console.log(data)
+          localStorage.setItem('data', JSON.stringify(data))
+          let { fullname, email, password, password_confirmation } = JSON.parse(
+            localStorage.getItem('data')
+          )
+          console.log(fullname, email, password, password_confirmation)
         },
       })
     </script>

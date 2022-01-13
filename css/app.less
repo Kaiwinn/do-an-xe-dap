@@ -1,12 +1,4 @@
-@font-face {
-  font-family: MyriadProCondensed;
-  src: url(./fonts/MyriadProCondensed/MyriadProCondensed.ttf);
-}
-
-@font-face {
-  font-family: BerlinSansFBDemiBold;
-  src: url(./fonts/BerlinSansFBDemiBold/BerlinSansFBDemiBold.ttf);
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 &:root {
   --main-color: #1d1d1d;
@@ -23,15 +15,12 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  user-select: none;
 }
-
-
 
 body {
   background-color: var(--main-color);
   color: var(--txt-color);
-  font-family: MyriadProCondensed, sans-serif;
+  font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
 }
 
@@ -43,6 +32,7 @@ a {
 
 ul {
   list-style-type: none;
+  margin: 0;
 }
 
 img {
@@ -99,6 +89,22 @@ img {
     a {
       margin-right: 1rem;
       font-size: 1.5rem;
+      position: relative;
+      .cart-quantity {
+        color: rgb(36, 36, 36);
+        background: rgb(253, 216, 53);
+        height: 20px;
+        left: 15px;
+        top: -2px;
+        border-radius: 40px;
+        display: inline-block;
+        text-align: center;
+        line-height: 20px;
+        font-size: 13px;
+        font-weight: 500;
+        position: absolute;
+        padding: 0px 7px;
+      }
     }
   }
 }
@@ -122,7 +128,7 @@ img {
     display: flex;
     height: 0;
     overflow: hidden;
-
+    // cursor: pointer;
     .slide-txt {
       width: 42%;
       padding-left: 60px;
@@ -131,8 +137,7 @@ img {
         width: max-content;
 
         h3 {
-          font-size: 13.5rem;
-          font-family: BerlinSansFBDemiBold;
+          font-size: 10rem;
           color: var(--txt-white);
           text-transform: capitalize;
           -webkit-text-fill-color: transparent;
@@ -141,7 +146,6 @@ img {
           transition: transform 0.5s ease 0s;
         }
       }
-
 
       .slide-description {
         margin-top: 84px;
@@ -152,15 +156,15 @@ img {
           transform: translateY(100px);
           opacity: 0;
           transition: transform 0.5s ease 0s, opacity 0.5s ease 0s;
+          cursor: text;
         }
       }
 
       .slide-btn {
-        margin-top: 84px;
         transform: translateY(100px);
         opacity: 0;
         transition: transform 0.5s ease 0s, opacity 0.5s ease 0s;
-        transition-delay: 0.6s;
+        transition-delay: 0.2s;
 
         .banner-btn {
           font-size: 1.9rem;
@@ -175,7 +179,6 @@ img {
             transform: translateY(-10px);
           }
         }
-
       }
     }
 
@@ -190,10 +193,10 @@ img {
         transform: rotate(-70deg);
         transform-origin: bottom;
         opacity: 0;
-        transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.6s ease 0s;
+        transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+          opacity 0.6s ease 0s;
       }
     }
-
   }
 
   .slide.active {
@@ -225,11 +228,9 @@ img {
     }
   }
 
-
   .banner-txt {
     position: absolute;
     text-transform: uppercase;
-    font-family: BerlinSansFBDemiBold;
     font-size: 11.75rem;
     top: 203px;
     right: -182px;
@@ -263,7 +264,7 @@ img {
       color: var(--txt-white);
     }
 
-    li~li {
+    li ~ li {
       margin-left: 30px;
     }
   }
@@ -273,7 +274,6 @@ img {
   padding: 12rem 0 0;
 
   .section-title {
-    font-family: BerlinSansFBDemiBold;
     text-align: center;
     position: relative;
 
@@ -350,9 +350,10 @@ img {
       .category-title {
         font-size: 4.5rem;
         font-weight: 700;
-        padding: 2rem;
         position: absolute;
         bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
         color: var(--txt-white);
         text-transform: capitalize;
       }
@@ -377,8 +378,8 @@ img {
         font-size: 2rem;
         text-transform: uppercase;
         margin-bottom: 10px;
+        height: 4rem;
       }
-
 
       &:hover {
         background-color: var(--bg-black);
@@ -389,7 +390,6 @@ img {
       .product-name {
         font-size: 3rem;
       }
-
 
       .product-price {
         font-size: 2rem;
@@ -413,9 +413,6 @@ img {
     transform: translateY(-50%);
   }
 }
-
-
-
 
 .special-section {
   position: relative;
@@ -464,8 +461,6 @@ img {
     bottom: -290px;
   }
 }
-
-
 
 .news-card {
   padding: 20px;
@@ -528,7 +523,7 @@ footer {
     .socials {
       display: flex;
 
-      li~li {
+      li ~ li {
         margin-left: 20px;
       }
 
@@ -544,7 +539,7 @@ footer {
     }
 
     .footer-menu {
-      li~li {
+      li ~ li {
         margin-top: 20px;
       }
 
@@ -586,9 +581,7 @@ footer {
         }
       }
     }
-
   }
-
 }
 
 .btn {
@@ -608,4 +601,27 @@ footer {
     background-color: var(--txt-white);
     color: var(--main-color);
   }
+}
+.to-header {
+  background: white;
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  color: #1f1f1f;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s;
+}
+.to-header.active {
+  bottom: 32px;
+  pointer-events: auto;
+  opacity: 1;
 }
