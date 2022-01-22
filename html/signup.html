@@ -36,8 +36,8 @@
                 <input
                   type="text"
                   placeholder="Username"
-                  id="fullname"
-                  name="fullname"
+                  id="username"
+                  name="username"
                 />
                 <span class="form-message"></span>
               </div>
@@ -86,24 +86,24 @@
         formGroupSeletor: '.form-group',
         errorSelector: '.form-message',
         rules: [
-          Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy dủ của bạn'),
+          Validator.isRequired('#username', 'Vui lòng nhập tên đầy dủ của bạn'),
           Validator.isRequired('#email', 'Vui lòng nhập trường này'),
           Validator.isRequired('#password', 'Vui lòng nhập trường này'),
           Validator.isRequired(
             '#password_confirmation',
             'Vui lòng nhập mật khẩu ở trên'
           ),
-          Validator.isEmail('#email', 'trường này không phải là email'),
+          Validator.isEmail('#email', 'Trường này không phải là email'),
           Validator.isPassword('#password', 8),
           Validator.isConfirmPassword(
             '#password_confirmation',
             () => document.querySelector('#form #password').value,
-            'mật khẩu nhập lại không chính xác'
+            'Mật khẩu nhập lại không chính xác'
           ),
         ],
         onSubmit: (data) => {
           localStorage.setItem('data', JSON.stringify(data))
-          document.querySelectorAll('#fullname')[0].value = ''
+          document.querySelectorAll('#username')[0].value = ''
           document.querySelectorAll('#password')[0].value = ''
           document.querySelector('#section').innerHTML = `
             <div class="modal d-block text-dark">

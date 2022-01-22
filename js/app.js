@@ -75,7 +75,20 @@ window.addEventListener('scroll', () => {
     header.classList.remove('shrink')
   }
 })
-
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 1000) {
+    toTop.classList.add('active')
+  } else {
+    toTop.classList.remove('active')
+  }
+})
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 1000) {
+    toTop.classList.add('active')
+  } else {
+    toTop.classList.remove('active')
+  }
+})
 localStorage.getItem('quantity') !== null
   ? ($('.cart-quantity').innerText = localStorage.getItem('quantity'))
   : $('.cart-quantity').classList.add('disabled')
