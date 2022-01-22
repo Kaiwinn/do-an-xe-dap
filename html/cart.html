@@ -4,7 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="icon" href="../../images/kuga.jpg" />
+
+    <title>Đồ án web</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -13,7 +21,7 @@
     />
 
     <link rel="stylesheet" href="./../boxicons-2.1.1/css/boxicons.min.css" />
-    <link rel="stylesheet/less" href="../css/cart.less" />
+    <link rel="stylesheet/less" href="../css/cart.css" />
   </head>
   <body>
     <header id="header">
@@ -23,10 +31,10 @@
       <div class="navbar-menu-wrapper">
         <ul class="navbar-menu">
           <li><a href="index.html" class="active">home</a></li>
-          <li><a href="#">shop</a></li>
-          <li><a href="#">dealer</a></li>
-          <li><a href="#">about</a></li>
-          <li><a href="#">contact</a></li>
+          <li><a href="./notfound.html">electric</a></li>
+          <li><a href="./notfound.html">mountain</a></li>
+          <li><a href="./notfound.html">about</a></li>
+          <li><a href="./notfound.html">contact</a></li>
         </ul>
       </div>
       <div class="user-menu">
@@ -34,158 +42,261 @@
           ><i class="bx bx-shopping-bag"></i>
           <span class="cart-quantity">3</span>
         </a>
-        <a href="./../html/login.html"><i class="bx bx-user"></i></a>
+        <a href="login.html"><i class="bx bx-user"></i></a>
         <a href="#"><i class="bx bx-search"></i></a>
       </div>
     </header>
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 p-5 mb-5">
-          <div class="table-responsive">
-            <table class="table text-white">
-              <thead>
-                <tr>
-                  <th>
-                    <span class="p-2 px-3 text-uppercase">Product</span>
-                  </th>
-                  <th>
-                    <span class="py-2 text-uppercase">Price</span>
-                  </th>
-                  <th>
-                    <span class="py-2 text-uppercase">Quantity</span>
-                  </th>
-                  <th>
-                    <span class="py-2 text-uppercase">Remove</span>
-                  </th>
-                </tr>
-              </thead>
-              <tbody class="cartItems">
-                <tr>
-                  <th>
-                    <div class="p-2 align-middle">
-                      <img
-                        src="https://bootstrapious.com/i/snippets/sn-cart/product-1.jpg"
-                        alt=""
-                        width="70"
-                        class="img-fluid rounded shop-item-image"
-                      />
-                      <div class="ml-3 d-inline-block align-middle">
-                        <h5 class="mb-0">
-                          <a href="#" class="d-inline-block align-middle"
-                            >Timex Unisex Originals</a
-                          >
-                        </h5>
-                        <span class="fw-normal fst-italic d-block"
-                          >Category: Watches</span
-                        >
-                      </div>
-                    </div>
-                  </th>
-                  <td class="align-middle cart-price">$79</td>
-                  <td class="align-middle cart-quantity ps-5">3</td>
-                  <td class="align-middle">
-                    <button class="remove">
-                      <i class="ps-4 fs-4 bx bxs-trash-alt"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th>
-                    <div class="p-2 align-middle">
-                      <img
-                        src="https://bootstrapious.com/i/snippets/sn-cart/product-1.jpg"
-                        alt=""
-                        width="70"
-                        class="img-fluid rounded shop-item-image"
-                      />
-                      <div class="ml-3 d-inline-block align-middle">
-                        <h5 class="mb-0">
-                          <a href="#" class="d-inline-block align-middle"
-                            >Timex Unisex Originals</a
-                          >
-                        </h5>
-                        <span class="fw-normal fst-italic d-block"
-                          >Category: Watches</span
-                        >
-                      </div>
-                    </div>
-                  </th>
-                  <td class="align-middle cart-price">$79</td>
-                  <td class="align-middle cart-quantity ps-5">3</td>
-                  <td class="align-middle">
-                    <button class="remove">
-                      <i class="ps-4 fs-4 bx bxs-trash-alt"></i>
-                    </button>
-                  </td>
-                </tr>
-                <tr>
-                  <th>
-                    <div class="p-2 align-middle">
-                      <img
-                        src="https://bootstrapious.com/i/snippets/sn-cart/product-1.jpg"
-                        alt=""
-                        width="70"
-                        class="img-fluid rounded shop-item-image"
-                      />
-                      <div class="ml-3 d-inline-block align-middle">
-                        <h5 class="mb-0">
-                          <a href="#" class="d-inline-block align-middle"
-                            >Timex Unisex Originals</a
-                          >
-                        </h5>
-                        <span class="fw-normal fst-italic d-block"
-                          >Category: Watches</span
-                        >
-                      </div>
-                    </div>
-                  </th>
-                  <td class="align-middle cart-price">$79</td>
-                  <td class="align-middle cart-quantity ps-5">3</td>
-                  <td class="align-middle">
-                    <button class="remove">
-                      <i class="ps-4 fs-4 bx bxs-trash-alt"></i>
-                    </button>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-      <div class="row justify-content-end">
-        <div class="col-lg-6">
-          <div class="rounded-pill px-4 py-3 text-uppercase font-weight-bold">
-            Order summary
-          </div>
-          <div class="list-unstyled mb-4 p-5">
-            <ul class="list-unstyled mb-4">
-              <li class="d-flex justify-content-between py-3 border-bottom">
-                <strong class="text-muted">Order Subtotal </strong
-                ><strong class="cart-total-price">$390.00</strong>
-              </li>
-              <li class="d-flex justify-content-between py-3 border-bottom">
-                <strong class="text-muted">Shipping and handling</strong
-                ><strong class="ship">$10</strong>
-              </li>
-              <li class="d-flex justify-content-between py-3 border-bottom">
-                <strong class="text-muted">Total</strong>
-                <h5 class="font-weight-bold total-price">$400</h5>
-              </li>
-            </ul>
-            <a
-              href="#"
-              class="btn btn-dark rounded-pill py-2 btn-block float-end btn-purchase"
-              >Procceed to checkout</a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
+    <div class="container"></div>
     <div id="empty" class="empty">
       <img src="../images/cart_empty.png" alt="cart empty" />
       <p class="empty-note">Không có sản phẩm nào trong giỏ hàng của bạn</p>
       <a href="index.html" class="empty-btn">Tiếp tục mua sắm</a>
     </div>
+    <footer class="footer" id="footer">
+      <div class="container">
+        <div class="row footer-top">
+          <div class="right col-3">
+            <a href="#">
+              <img src="../images/TuaBike.png" alt="" />
+            </a>
+          </div>
+          <div class="left col-9">
+            <div class="widget widget-newsletter">
+              <div class="newsletter-info me-5">
+                <h4 class="widget-title font-weight-bold">
+                  Subscribe to our Newsletter
+                </h4>
+                <p>
+                  Get all the latest information on Evens, Sales and Offers.
+                </p>
+              </div>
+              <form action="#" class="input-wrapper input-wrapper-inline">
+                <input
+                  type="email"
+                  class="form-control"
+                  placeholder="Email address here..."
+                  id="email"
+                  name="email"
+                />
+                <button
+                  class="btn btn-primary m-0 font-weight-bold"
+                  type="submit"
+                >
+                  SUBSCRIBE
+                  <i class="bx bx-right-arrow-alt"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <div class="row footer-middle">
+          <div class="col-lg-3 col-md-6">
+            <div class="widget">
+              <h4 class="widget-title">CONTACT INFO</h4>
+              <ul class="widget-body">
+                <li class="mb-3">
+                  <label>PHONE: </label>
+                  <a href="#">Toll Free (123) 456-7890</a>
+                </li>
+                <li class="mb-3">
+                  <label>EMAIL: </label>
+                  <a href="#">mail@donal.com</a>
+                </li>
+                <li class="mb-3">
+                  <label>ADDRESS: </label>
+                  <a href="#"> 123 Street Name, City, England</a>
+                </li>
+                <li class="mb-3">
+                  <label>WORKING DAYS/HOURS</label>
+                </li>
+                <li class="mb-3">
+                  <a href="#">Mon - Sun / 9:00 AM - 8:00 PM</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="widget">
+              <h4 class="widget-title">MY ACCOUNT</h4>
+              <ul class="widget-body">
+                <li class="mb-3">
+                  <a href="#">About Us</a>
+                </li>
+                <li class="mb-3">
+                  <a href="#">Order History</a>
+                </li>
+                <li class="mb-3">
+                  <a href="#">Returns</a>
+                </li>
+                <li class="mb-3">
+                  <a href="#">Custom Service</a>
+                </li>
+                <li class="mb-3">
+                  <a href="#">Terms & Condition</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="widget">
+              <h4 class="widget-title">CONTACT INFO</h4>
+              <ul class="widget-body">
+                <li class="mb-3">
+                  <a href="#">About Us</a>
+                </li>
+                <li class="mb-3">
+                  <a href="#">Order History</a>
+                </li>
+                <li class="mb-3">
+                  <a href="#">Returns</a>
+                </li>
+                <li class="mb-3">
+                  <a href="#">Custom Service</a>
+                </li>
+                <li class="mb-3">
+                  <a href="#">Terms & Condition</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="widget">
+              <h4 class="widget-title">INSTAGRAM</h4>
+              <figure class="widget-body row">
+                <div class="col-3">
+                  <img
+                    src="../images/instagram/01.jpg"
+                    alt="instagram 1"
+                    width="64"
+                    height="64"
+                  />
+                </div>
+                <div class="col-3">
+                  <img
+                    src="../images/instagram/02.jpg"
+                    alt="instagram 2"
+                    width="64"
+                    height="64"
+                  />
+                </div>
+                <div class="col-3">
+                  <img
+                    src="../images/instagram/03.jpg"
+                    alt="instagram 3"
+                    width="64"
+                    height="64"
+                  />
+                </div>
+                <div class="col-3">
+                  <img
+                    src="../images/instagram/04.jpg"
+                    alt="instagram 4"
+                    width="64"
+                    height="64"
+                  />
+                </div>
+                <div class="col-3">
+                  <img
+                    src="../images/instagram/05.jpg"
+                    alt="instagram 5"
+                    width="64"
+                    height="64"
+                  />
+                </div>
+                <div class="col-3">
+                  <img
+                    src="../images/instagram/06.jpg"
+                    alt="instagram 6"
+                    width="64"
+                    height="64"
+                  />
+                </div>
+                <div class="col-3">
+                  <img
+                    src="../images/instagram/07.jpg"
+                    alt="instagram 7"
+                    width="64"
+                    height="64"
+                  />
+                </div>
+                <div class="col-3">
+                  <img
+                    src="../images/instagram/08.jpg"
+                    alt="instagram 8"
+                    width="64"
+                    height="64"
+                  />
+                </div>
+              </figure>
+            </div>
+          </div>
+        </div>
+        <div class="row footer-bottom">
+          <div class="col-4">
+            <figure>
+              <img src="../images/payment.png" alt="payment" />
+            </figure>
+          </div>
+          <div class="col-4">
+            <p>Bicycle eCommerce © 2020.ALl Rights Reserved</p>
+          </div>
+          <div class="col-4">
+            <div class="social-links">
+              <a
+                href="https://www.facebook.com/"
+                class="social-link social-facebook bx bxl-facebook"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></a>
+              <a
+                href="https://twitter.com/"
+                class="social-link social-twitter bx bxl-twitter"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></a>
+              <a
+                href="https://www.google.com/gmail/"
+                class="social-link social-linkedin bx bxl-linkedin"
+                target="_blank"
+                rel="noopener noreferrer"
+              ></a>
+            </div>
+          </div>
+        </div>
+        <table class="table text-white" style="max-width: 30rem">
+          <h3 class="title">Danh sách thành viên nhóm 9</h3>
+          <thead>
+            <tr>
+              <th>MSSV</th>
+              <th>Họ và tên</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>20075751</th>
+              <td>Nguyễn Xuân Long <i>(Nhóm trưởng)</i></td>
+            </tr>
+            <tr>
+              <th>20077681</th>
+              <td>Nguyễn Đức Tài</td>
+            </tr>
+            <tr>
+              <th>20070031</th>
+              <td>Lê Quốc Phòng</td>
+            </tr>
+            <tr>
+              <th>20066981</th>
+              <td>Nguyễn Đức Chiến</td>
+            </tr>
+            <tr>
+              <th>19502301</th>
+              <td>Huỳnh Minh Hào</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </footer>
     <script src="../js/cart.js"></script>
     <script src="//cdn.jsdelivr.net/npm/less@3.13"></script>
     <script

@@ -17,13 +17,10 @@ let slide_next = banner_slide.querySelector('.slide-next')
 
 let slide_prev = banner_slide.querySelector('.slide-prev')
 
-const toTop = document.querySelector('.to-header')
+const toTop = $('.to-header')
 
 let header = $('header')
-let btn = $('button')
-btn.onclick = () => {
-  console.log('test')
-}
+
 showSlide = (index) => {
   banner_slide.querySelector('.slide.active').classList.remove('active')
   banner_slide
@@ -79,45 +76,25 @@ window.addEventListener('scroll', () => {
   }
 })
 
-//scroll to top
-window.addEventListener('scroll', () => {
-  if (window.pageYOffset > 1000) {
-    toTop.classList.add('active')
-  } else {
-    toTop.classList.remove('active')
-  }
-})
+localStorage.getItem('quantity') !== null
+  ? ($('.cart-quantity').innerText = localStorage.getItem('quantity'))
+  : $('.cart-quantity').classList.add('disabled')
+//store
 
-// element show on scroll
+let addContainter = $$('.add')
 
-let scroll =
-  window.requestAnimationFrame ||
-  function (callback) {
-    window.setTimeout(callback, 1000 / 60)
-  }
-
-let el_to_show = $$('.show-on-scroll')
-
-isElInViewPort = (el) => {
-  let rect = el.getBoundingClientRect()
-
-  let distance = 200
-
-  return (
-    rect.top <=
-    (window.innerHeight - distance ||
-      document.documentElement.clientHeight - distance)
-  )
-}
-
-loop = () => {
-  el_to_show.forEach((el) => {
-    if (isElInViewPort(el)) el.classList.add('show')
+for (let i = 0; i < addContainter.length; i++) {
+  let add = addContainter[i]
+  add.addEventListener('click', function () {
+    let product = add.parentElement
+    let title = product.querySelector('.product-name').innerText
+    let price = product.querySelector('.product-price').innerText
+    let img = product.querySelector('img').src
+    let addProduct = {
+      title,
+      price,
+      img,
+    }
+    localStorage.setItem('product', JSON.stringify(addProduct))
   })
-
-  scroll(loop)
 }
-
-loop()
-document.querySelector('.cart-quantity').innerText =
-  localStorage.getItem('quantity')

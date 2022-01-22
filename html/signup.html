@@ -30,7 +30,7 @@
         <div class="square" style="--i: 4"></div>
         <div class="container">
           <div class="form">
-            <h2>login form</h2>
+            <h2>SIGN UP</h2>
             <form id="form">
               <div class="form-group mb-4">
                 <input
@@ -44,7 +44,7 @@
               <div class="form-group mb-4">
                 <input
                   type="email"
-                  placeholder="email"
+                  placeholder="Email"
                   id="email"
                   name="email"
                 />
@@ -72,7 +72,7 @@
                 <button type="submit">Sign Up</button>
               </div>
               <p class="forget">
-                You have an account ? <a href="./login.html">Login</a>
+                You have an account ? <a href="login.html">Login</a>
               </p>
             </form>
           </div>
@@ -103,10 +103,35 @@
         ],
         onSubmit: (data) => {
           localStorage.setItem('data', JSON.stringify(data))
-          let { fullname, email, password, password_confirmation } = JSON.parse(
-            localStorage.getItem('data')
-          )
-          console.log(fullname, email, password, password_confirmation)
+          document.querySelectorAll('#fullname')[0].value = ''
+          document.querySelectorAll('#password')[0].value = ''
+          document.querySelector('#section').innerHTML = `
+            <div class="modal d-block text-dark">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Sign up successfully</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Enjoy your shopping time.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                      <a href="index.html" class="text-light text-decoration-none"
+                        >Go to home</a
+                      >
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            `
         },
       })
     </script>

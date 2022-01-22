@@ -1,3 +1,4 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans:800');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 &:root {
@@ -24,7 +25,6 @@ body {
   font-family: 'Poppins', sans-serif;
   color: var(--txt-white);
 }
-
 a {
   text-decoration: none;
   color: unset;
@@ -46,6 +46,7 @@ img {
   width: 100%;
   background-color: transparent;
   display: flex;
+
   align-items: center;
   justify-content: space-between;
   padding: 0 var(--header-padding);
@@ -108,129 +109,90 @@ img {
     }
   }
 }
-
-footer {
-  margin-top: 90px;
-  padding-bottom: 60px;
-  background-color: var(--second-color);
-
-  .section-content {
-    .footer-description {
-      margin: 30px 0;
-    }
-
-    .footer-header {
-      font-size: 1.5rem;
-      text-transform: uppercase;
-      color: var(--txt-white);
-    }
-
-    .socials {
-      display: flex;
-
-      li ~ li {
-        margin-left: 20px;
-      }
-
-      li {
-        a {
-          font-size: 1.5rem;
-
-          &:hover {
-            color: var(--txt-white);
-          }
-        }
-      }
-    }
-
-    .footer-menu {
-      li ~ li {
-        margin-top: 20px;
-      }
-
-      li {
-        a {
-          font-size: 1.5rem;
-          text-transform: uppercase;
-
-          &:hover {
-            color: var(--txt-white);
-          }
-        }
-      }
-    }
-
-    .subscribe-form {
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-
-      input {
-        border: none;
-        outline: none;
-        width: 60%;
-
-        padding: 10px 20px;
-        border-radius: 5px;
-      }
-
-      .btn {
-        margin-top: 0;
-        padding: 10px;
-        font-size: 14px;
-        height: inherit;
-
-        &:hover {
-          background-color: var(--txt-white);
-          color: var(--main-color);
-        }
-      }
-    }
-  }
-}
-
-.btn {
-  margin-top: 5px;
-  padding: 0.5rem 1rem;
-  border: none;
-  outline: none;
-  text-transform: uppercase;
-  font-weight: 700;
-  cursor: pointer;
-  background-color: var(--second-color);
-  color: var(--txt-white);
-  transition: all 0.3s ease 0s;
-  height: inherit;
-
-  &:hover {
-    background-color: var(--txt-white);
-    color: var(--main-color);
-  }
-}
-.remove,
-.add {
-  background: transparent;
-  border: none;
-  color: var(--txt-white);
-}
-.empty {
-  padding: 40px 20px;
-  border-radius: 4px;
+#notfound {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+  flex-direction: column;
   text-align: center;
-  width: 100%;
-  display: none;
-  &-btn {
-    background-color: rgb(253, 216, 53);
-    color: rgb(74, 74, 74);
-    font-weight: 500;
-    padding: 10px 55px;
-    display: inline-block;
-    border-radius: 4px;
+  svg {
+    font: 10.5em/2 Open Sans, Impact;
+    margin: 2rem 0;
+    .text {
+      fill: none;
+      stroke-width: 1;
+      stroke-linejoin: round;
+      stroke-dasharray: 70 330;
+      stroke-dashoffset: 0;
+      animation: stroke 6s linear infinite;
+      font-size: 30px;
+      // font-weight: 700;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    .text:nth-child(5n + 1) {
+      stroke: #ff6bcb;
+
+      animation-delay: -1.2s;
+    }
+    .text:nth-child(5n + 2) {
+      stroke: #ff6bcb;
+
+      animation-delay: -2.4s;
+    }
+
+    .text:nth-child(5n + 3) {
+      stroke: #ff6bcb;
+
+      animation-delay: -3.6s;
+    }
+
+    .text:nth-child(5n + 4) {
+      stroke: #ff6bcb;
+
+      animation-delay: -4.8s;
+    }
+
+    .text:nth-child(5n + 5) {
+      stroke: #ff6bcb;
+
+      animation-delay: -6s;
+    }
+  }
+  button {
+    position: absolute;
+    margin-top: 5px;
+    padding: 0.5rem 1rem;
+    border: none;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: var(--second-color);
+    color: var(--txt-white);
+    transition: all 0.3s ease 0s;
+    height: inherit;
+    bottom: 50px;
+    &:hover {
+      background-color: var(--txt-white);
+      color: var(--main-color);
+    }
   }
 }
-.active {
-  display: block;
+@-webkit-keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
 }
-.disabled {
-  display: none !important;
+
+@keyframes stroke {
+  100% {
+    stroke-dashoffset: -400;
+  }
 }
