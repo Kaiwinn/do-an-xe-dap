@@ -17,11 +17,10 @@ let slide_next = banner_slide.querySelector('.slide-next')
 
 let slide_prev = banner_slide.querySelector('.slide-prev')
 
+const toTop = $('.to-header')
+
 let header = $('header')
-let btn = $('button')
-btn.onclick = () => {
-  console.log('test')
-}
+
 showSlide = (index) => {
   banner_slide.querySelector('.slide.active').classList.remove('active')
   banner_slide
@@ -62,13 +61,11 @@ banner_slide.addEventListener('mouseover', () => (banner_slide_play = false))
 // resume slide when mouse leave out slider
 banner_slide.addEventListener('mouseleave', () => (banner_slide_play = true))
 
-setTimeout(() => banner_slide_items[0].classList.add('active'), 200)
-
 // auto slide
-// setInterval(() => {
-//     if (!banner_slide_play) return
-//     nextSlide()
-// }, 5000);
+setInterval(() => {
+  if (!banner_slide_play) return
+  nextSlide()
+}, 5000)
 
 // change header style when scroll
 window.addEventListener('scroll', () => {
@@ -78,35 +75,39 @@ window.addEventListener('scroll', () => {
     header.classList.remove('shrink')
   }
 })
-
-// element show on scroll
-
-let scroll =
-  window.requestAnimationFrame ||
-  function (callback) {
-    window.setTimeout(callback, 1000 / 60)
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 1000) {
+    toTop.classList.add('active')
+  } else {
+    toTop.classList.remove('active')
   }
+})
+window.addEventListener('scroll', () => {
+  if (window.pageYOffset > 1000) {
+    toTop.classList.add('active')
+  } else {
+    toTop.classList.remove('active')
+  }
+})
+localStorage.getItem('quantity') !== null
+  ? ($('.cart-quantity').innerText = localStorage.getItem('quantity'))
+  : $('.cart-quantity').classList.add('disabled')
+//store
 
-let el_to_show = $$('.show-on-scroll')
+let addContainter = $$('.add')
 
-isElInViewPort = (el) => {
-  let rect = el.getBoundingClientRect()
-
-  let distance = 200
-
-  return (
-    rect.top <=
-    (window.innerHeight - distance ||
-      document.documentElement.clientHeight - distance)
-  )
-}
-
-loop = () => {
-  el_to_show.forEach((el) => {
-    if (isElInViewPort(el)) el.classList.add('show')
+for (let i = 0; i < addContainter.length; i++) {
+  let add = addContainter[i]
+  add.addEventListener('click', function () {
+    let product = add.parentElement
+    let title = product.querySelector('.product-name').innerText
+    let price = product.querySelector('.product-price').innerText
+    let img = product.querySelector('img').src
+    let addProduct = {
+      title,
+      price,
+      img,
+    }
+    localStorage.setItem('product', JSON.stringify(addProduct))
   })
-
-  scroll(loop)
 }
-
-loop()

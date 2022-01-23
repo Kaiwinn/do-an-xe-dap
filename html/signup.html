@@ -30,21 +30,21 @@
         <div class="square" style="--i: 4"></div>
         <div class="container">
           <div class="form">
-            <h2>login form</h2>
+            <h2>SIGN UP</h2>
             <form id="form">
               <div class="form-group mb-4">
                 <input
                   type="text"
                   placeholder="Username"
-                  id="fullname"
-                  name="fullname"
+                  id="username"
+                  name="username"
                 />
                 <span class="form-message"></span>
               </div>
               <div class="form-group mb-4">
                 <input
                   type="email"
-                  placeholder="email"
+                  placeholder="Email"
                   id="email"
                   name="email"
                 />
@@ -72,7 +72,7 @@
                 <button type="submit">Sign Up</button>
               </div>
               <p class="forget">
-                You have an account ? <a href="./login.html">Login</a>
+                You have an account ? <a href="login.html">Login</a>
               </p>
             </form>
           </div>
@@ -86,26 +86,52 @@
         formGroupSeletor: '.form-group',
         errorSelector: '.form-message',
         rules: [
-          Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy dủ của bạn'),
+          Validator.isRequired('#username', 'Vui lòng nhập tên đầy dủ của bạn'),
           Validator.isRequired('#email', 'Vui lòng nhập trường này'),
           Validator.isRequired('#password', 'Vui lòng nhập trường này'),
-          Validator.isRequired('input[name = "gender"]'),
           Validator.isRequired(
             '#password_confirmation',
-            'Vui lòng nhập trường này'
+            'Vui lòng nhập mật khẩu ở trên'
           ),
-          Validator.isEmail('#email'),
+          Validator.isEmail('#email', 'Trường này không phải là email'),
           Validator.isPassword('#password', 8),
           Validator.isConfirmPassword(
             '#password_confirmation',
-            () => {
-              return document.querySelector('#form-1 #password').value
-            },
-            'mật khẩu nhập lại không chính xác'
+            () => document.querySelector('#form #password').value,
+            'Mật khẩu nhập lại không chính xác'
           ),
         ],
         onSubmit: (data) => {
-          console.log(data)
+          localStorage.setItem('data', JSON.stringify(data))
+          document.querySelectorAll('#username')[0].value = ''
+          document.querySelectorAll('#password')[0].value = ''
+          document.querySelector('#section').innerHTML = `
+            <div class="modal d-block text-dark">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title">Sign up successfully</h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body">
+                    <p>Enjoy your shopping time.</p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-primary">
+                      <a href="index.html" class="text-light text-decoration-none"
+                        >Go to home</a
+                      >
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            `
         },
       })
     </script>

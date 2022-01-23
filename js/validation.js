@@ -23,15 +23,7 @@ function Validator(options) {
 
     const rules = selectorRules[rule.selector]
     for (let i = 0; i < rules.length; i++) {
-      switch (inputElement.type) {
-        case 'radio':
-        case 'checkbox':
-          errorMessage = rules[i](
-            formElement.querySelector(rule.selector + ':checked')
-          )
-        default:
-          errorMessage = rules[i](inputElement.value)
-      }
+      errorMessage = rules[i](inputElement.value)
       if (errorMessage) break
     }
 
@@ -57,11 +49,8 @@ function Validator(options) {
       let isFormValid = true
       options.rules.forEach((rule) => {
         const inputElement = formElement.querySelector(rule.selector)
-        const errorElement = getParent(
-          inputElement,
-          options.formGroupSeletor
-        ).querySelector(options.errorSelector)
-        let isValid = validate(inputElement, rule, errorElement)
+
+        let isValid = validate(inputElement, rule)
         if (!isValid) {
           isFormValid = false
         }
@@ -114,38 +103,37 @@ function Validator(options) {
 Validator.isRequired = (selector, message) => {
   return {
     selector,
-    test: (value) => {
-      return value ? undefined : message || 'Vui lòng nhập trường này'
-    },
+    test: (value) =>
+      value ? undefined : message || 'Vui lòng nhập trường này',
   }
 }
-Validator.isEmail = (selector) => {
+Validator.isEmail = (selector, message) => {
   return {
     selector,
     test: (value) => {
       const regex =
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-      return regex.test(value) ? undefined : 'trường này không phải là email'
+      return regex.test(value)
+        ? undefined
+        : message || 'Trường này không phải là email'
     },
   }
 }
-Validator.isPassword = (selector, length) => {
+Validator.isPassword = (selector, min) => {
   return {
     selector,
-    test: (value) => {
-      return value.trim() && value.length >= length
+    test: (value) =>
+      value.trim() && value.length >= min
         ? undefined
-        : `Vui lòng nhập trường này ít nhất có ${length} kí tự`
-    },
+        : `Vui lòng nhập trường này ít nhất có ${min} kí tự`,
   }
 }
 Validator.isConfirmPassword = (selector, getConfirmPassword, message) => {
   return {
     selector,
-    test: (value) => {
-      return value === getConfirmPassword()
+    test: (value) =>
+      value === getConfirmPassword()
         ? undefined
-        : message || 'Vui lòng nhập trường này'
-    },
+        : message || 'Vui lòng nhập trường này',
   }
 }
